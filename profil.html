@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profil Kelas TKJ 1</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+body{
+  font-family:'Poppins',sans-serif;
+  margin:0;
+  padding:0;
+  background: linear-gradient(135deg,#0f2027,#2c5364,#1a1a2e);
+  background-size:600% 600%;
+  animation:gradientBG 20s ease infinite;
+  color:white;
+  text-align:center;
+}
+
+@keyframes gradientBG{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+h1{
+  margin-top:40px;
+  font-size:2.5rem;
+}
+
+.container{
+  max-width:800px;
+  margin:40px auto;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(10px);
+  padding:40px;
+  border-radius:15px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+.foto-kelas{
+  width:100%;
+  border-radius:10px;
+  margin-bottom:25px;
+}
+
+.info{
+  text-align:left;
+  line-height:1.8;
+}
+
+.motto{
+  margin-top:25px;
+  font-style:italic;
+  opacity:0.9;
+}
+
+/* tombol navigasi */
+.nav{
+  display:flex;
+  justify-content:space-between;
+  margin-top:40px;
+}
+
+.btn{
+  text-decoration:none;
+  color:white;
+  padding:12px 30px;
+  border-radius:30px;
+  background:rgba(255,255,255,0.2);
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:rgba(255,255,255,0.5);
+  transform:scale(1.08);
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Profil Kelas XII TKJ 1</h1>
+
+<div class="container">
+
+<img src="foto/foto.jpeg" class="foto-kelas">
+
+<div class="info">
+<p><b>Kelas</b> : 12 TKJ 1</p>
+<p><b>Jurusan</b> : Teknik Komputer dan Jaringan</p>
+<p><b>Sekolah</b> : SMK Nurul Huda Paguyangan</p>
+<p><b>Tahun Angkatan</b> : 2023 - 2026</p>
+<p><b>Jumlah Siswa</b> : 34 Orang</p>
+<p><b>Wali Kelas</b> : Ali Asy'Ari</p>
+</div>
+
+<div class="motto">
+"sesulit apapun masalah,jalani bae alon alon"
+</div>
+
+<div class="nav">
+<a href="struktur.html" class="btn">← Back</a>
+<a href="galeri.html" class="btn">Next →</a>
+</div>
+
+</div>
+
+</body>
+</html>

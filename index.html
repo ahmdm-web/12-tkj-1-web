@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome Kelas 12 TKJ 1</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+  body{
+  font-family:'Poppins',sans-serif;
+  margin:0;
+  padding:0;
+  background: linear-gradient(135deg, #0f2027, #2c5364, #1a1a2e);
+  background-size: 600% 600%;
+  animation: gradientBG 20s ease infinite;
+  color:white;
+  text-align:center;
+
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
+
+@keyframes gradientBG{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+h1 {
+ 
+  margin-bottom:30px;
+  font-size: 3.5rem;
+  margin: 0 0 20px;
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+button {
+
+  animation: fadeIn 2.5s ease forwards;
+  opacity: 0;
+  padding: 15px 50px;
+  font-size: 1.25rem;
+  border: none;
+  border-radius: 40px;
+  background: rgba(255 255 255 / 0.3);
+  color: white;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background: rgba(255 255 255 / 0.6);
+  transform: scale(1.1);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Welcome to Class 12 TKJ 1</h1>
+
+<a href="struktur.html"><button>MASUK</button></a>
+
+</body>
+</html>
