@@ -3,24 +3,68 @@
 <head>
 <title>Welcome Kelas 12 TKJ 1</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
-  body{
-  font-family:'Poppins',sans-serif;
-  margin:0;
-  padding:0;
-  background: linear-gradient(135deg, #0f2027, #2c5364, #1a1a2e);
-  background-size: 600% 600%;
-  animation: gradientBG 20s ease infinite;
-  color:white;
-  text-align:center;
+/* NAVBAR */
 
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:rgba(0,0,0,0.3);
+backdrop-filter:blur(10px);
+z-index:1000;
+box-sizing:border-box;
+}
+
+.logo{
+font-size:1.3rem;
+font-weight:bold;
+}
+
+.menu{
+display:flex;
+gap:30px;
+list-style:none;
+margin:0;
+padding:0;
+}
+
+.menu a{
+text-decoration:none;
+color:white;
+font-size:0.95rem;
+transition:0.3s;
+}
+
+.menu a:hover{
+color:#7ec8ff;
+}
+
+  body{
+font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+padding-top:80px;
+background: linear-gradient(135deg,#0f2027,#2c5364,#1a1a2e);
+background-size:600% 600%;
+animation: gradientBG 20s ease infinite;
+color:white;
+text-align:center;
+
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
 }
 
 @keyframes gradientBG{
@@ -29,40 +73,73 @@
   100%{background-position:0% 50%;}
 }
 
-h1 {
- 
-  margin-bottom:30px;
-  font-size: 3.5rem;
-  margin: 0 0 20px;
-  animation: fadeIn 2s ease forwards;
-  opacity: 0;
+h1{
+  font-size:3.5rem;
+  margin:0 0 20px;
+  opacity:0;
+  transform:translateY(30px);
+  animation:slideFade 1.5s ease forwards;
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
+@keyframes slideFade{
+  to{
+    opacity:1;
+    transform:translateY(0);
   }
 }
 
-button {
+button{
+  opacity:0;
+  animation:slideFade 2s ease forwards;
 
-  animation: fadeIn 2.5s ease forwards;
-  opacity: 0;
-  padding: 15px 50px;
-  font-size: 1.25rem;
-  border: none;
-  border-radius: 40px;
-  background: rgba(255 255 255 / 0.3);
-  color: white;
-  cursor: pointer;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
-  transition: background 0.3s ease, transform 0.3s ease;
+  padding:15px 50px;
+  font-size:1.25rem;
+  border:none;
+  border-radius:40px;
+  background:rgba(255,255,255,0.25);
+  color:white;
+  cursor:pointer;
+  backdrop-filter:blur(10px);
+
+  box-shadow:0 8px 30px rgba(0,0,0,0.4);
+  transition:all 0.3s ease;
 }
 
-button:hover {
-  background: rgba(255 255 255 / 0.6);
-  transform: scale(1.1);
+button:hover{
+  background:rgba(255,255,255,0.6);
+  transform:scale(1.08);
+  box-shadow:0 0 20px rgba(126,200,255,0.8);
+}
+
+@media (max-width:768px){
+
+.menu{
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+.navbar{
+flex-direction:column;
+gap:10px;
+}
+
+h1{
+font-size:2.2rem;
+}
+
+}
+.fade-in{
+opacity:0;
+transform:translateY(40px);
+animation:fadeUp 1.5s ease forwards;
+}
+
+@keyframes fadeUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 </style>
@@ -70,10 +147,26 @@ button:hover {
 </head>
 
 <body>
+<nav class="navbar">
 
+<div class="logo">
+TKJ 1
+</div>
+
+<ul class="menu">
+<li><a href="index.html">Home</a></li>
+<li><a href="profil.html">Profil</a></li>
+<li><a href="struktur.html">Struktur</a></li>
+<li><a href="siswa.html">Siswa</a></li>
+<li><a href="galeri.html">Galeri</a></li>
+<li><a href="kegiatan.html">Kegiatan</a></li>
+<li><a href="penutup.html">Penutup</a></li>
+</ul>
+
+</nav>
 <h1>Welcome to Class 12 TKJ 1</h1>
 
-<a href="struktur.html"><button>MASUK</button></a>
+<a href="profil.html"><button>MASUK</button></a>
 
 </body>
 </html>

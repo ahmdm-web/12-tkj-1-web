@@ -1,9 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Struktur TKJ 1</title>
+<title>Struktur XII TKJ 1</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 60px;
+background:rgba(0,0,0,0.3);
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+font-size:1.3rem;
+font-weight:bold;
+}
+
+.menu{
+display:flex;
+gap:30px;
+list-style:none;
+margin:0;
+padding:0;
+}
+
+.menu a{
+text-decoration:none;
+color:white;
+font-size:0.95rem;
+transition:0.3s;
+}
+
+.menu a:hover{
+color:#7ec8ff;
+}
 
 body{
   font-family:'Poppins',sans-serif;
@@ -118,7 +159,8 @@ h1{
 .nav-buttons{
   display:flex;
   justify-content:space-between;
-  margin:60px 80px;
+  gap: calc(30px);
+  margin:10px 80px;
 }
 
 .btn{
@@ -145,12 +187,61 @@ h1{
   display:none;
 }
 
+@media (max-width:768px){
+
+.menu{
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+.navbar{
+flex-direction:column;
+gap:10px;
+}
+
+h1{
+font-size:2.2rem;
+}
+
+}
+
+.fade-in{
+opacity:0;
+transform:translateY(40px);
+animation:fadeUp 1.5s ease forwards;
+}
+
+@keyframes fadeUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
 </style>
 </head>
 
 <body>
+  <nav class="navbar">
 
-<h1>Struktur Organisasi Kelas 12 TKJ 1</h1>
+<div class="logo">
+TKJ 1
+</div>
+
+<ul class="menu">
+<li><a href="index.html">Home</a></li>
+<li><a href="profil.html">Profil</a></li>
+<li><a href="struktur.html">Struktur</a></li>
+<li><a href="siswa.html">Siswa</a></li>
+<li><a href="galeri.html">Galeri</a></li>
+<li><a href="kegiatan.html">Kegiatan</a></li>
+<li><a href="penutup.html">Penutup</a></li>
+</ul>
+
+</nav>
+
+<h1>Struktur Organisasi Kelas XII TKJ 1</h1>
 <p class="sub">SMK Nurul Huda Paguyangan — Teknik Komputer dan Jaringan</p>
 
 <div class="tree">
@@ -181,14 +272,14 @@ h1{
 <!-- Level 3: Bendahara -->
 <div class="row">
     <div class="card">
-        <img src="foto/mola.jpg">
+        <img src="foto/musa.jpg">
         <div class="jabatan">Bendahara 1</div>
-        <p>Maulatuz Zahro</p>
+        <p>Ahmad Musyaffa</p>
     </div>
     <div class="card">
-        <img src="foto/musa.jpg">
+        <img src="foto/mola.jpg">
         <div class="jabatan">Bendahara 2</div>
-        <p>Ahmad Musyaffa</p>
+        <p>Maulatuz Zahro</p>
     </div>
 </div>
 
@@ -207,7 +298,8 @@ h1{
 </div>
 
 <div class="nav-buttons">
-  <a href="profil.html" class="btn next">Next →</a>
+  <a href="profil.html" class="btn">← Back</a>
+  <a href="siswa.html" class="btn next">Next →</a>
 </div>
 
 </div>
