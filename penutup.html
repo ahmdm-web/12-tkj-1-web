@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Penutup - TKJ 1</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+font-family:'Poppins',sans-serif;
+margin:0;
+background:linear-gradient(135deg,#0f2027,#2c5364,#1a1a2e);
+color:white;
+text-align:center;
+padding:120px 20px;
+padding-top:100px;
+}
+
+
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:rgba(0,0,0,0.3);
+backdrop-filter:blur(10px);
+z-index:1000;
+box-sizing:border-box;
+}
+
+.logo{
+font-size:1.3rem;
+font-weight:bold;
+}
+
+.menu{
+display:flex;
+gap:30px;
+list-style:none;
+margin:0;
+padding:0;
+}
+
+.menu a{
+text-decoration:none;
+color:white;
+font-size:0.95rem;
+transition:0.3s;
+}
+
+.menu a:hover{
+color:#7ec8ff;
+}
+
+/* KONTEN */
+
+.container{
+max-width:800px;
+margin:auto;
+}
+
+h1{
+font-size:2.8rem;
+margin-bottom:20px;
+}
+
+p{
+opacity:0.9;
+line-height:1.7;
+}
+
+.credit{
+margin-top:40px;
+font-size:0.9rem;
+opacity:0.7;
+}
+
+@media (max-width:768px){
+
+.menu{
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+.navbar{
+flex-direction:column;
+gap:10px;
+}
+
+h1{
+font-size:2.2rem;
+}
+
+}
+.fade-in{
+opacity:0;
+transform:translateY(40px);
+animation:fadeUp 1.5s ease forwards;
+}
+
+@keyframes fadeUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+<div class="logo">TKJ 1</div>
+
+<ul class="menu">
+<li><a href="index.html">Home</a></li>
+<li><a href="profil.html">Profil</a></li>
+<li><a href="struktur.html">Struktur</a></li>
+<li><a href="siswa.html">Siswa</a></li>
+<li><a href="galeri.html">Galeri</a></li>
+<li><a href="kegiatan.html">Kegiatan</a></li>
+<li><a href="penutup.html">Penutup</a></li>
+</ul>
+</nav>
+
+<div class="container">
+
+<h1>Terima Kasih</h1>
+
+<p>
+Website ini dibuat sebagai kenang-kenangan perjalanan kelas tercinta kita
+<b>kelas TKJ 1</b>. Banyak cerita, tawa, dan pengalaman yang kita lalui
+bersama selama di sekolah.
+</p>
+
+<p>
+Semoga kebersamaan ini tetap dikenang walaupun nanti kita sudah
+melanjutkan jalan masing-masing.
+</p>
+
+<div class="credit">
+Website dibuat oleh ahmad musyaffa • 2026
+</div>
+
+</div>
+
+</body>
+</html>
