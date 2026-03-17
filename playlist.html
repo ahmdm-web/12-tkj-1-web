@@ -1,255 +1,254 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Playlist XII TKJ 1</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
+    <title>Playlist XII TKJ 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 60px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 60px;
-background:rgba(0,0,0,0.3);
-backdrop-filter:blur(10px);
-position:sticky;
-top:0;
-z-index:1000;
-}
+        .logo {
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
 
-.logo{
-font-size:1.3rem;
-font-weight:bold;
-}
+        .menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
 
-.menu{
-display:flex;
-gap:30px;
-list-style:none;
-margin:0;
-padding:0;
-}
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
 
-.menu a{
-text-decoration:none;
-color:white;
-font-size:0.95rem;
-transition:0.3s;
-}
+        .menu a:hover {
+            color: #7ec8ff;
+        }
 
-.menu a:hover{
-color:#7ec8ff;
-}
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f2027, #2c5364, #1a1a2e);
+            background-size: 600% 600%;
+            animation: gradientBG 20s ease infinite;
+            color: white;
+            text-align: center;
+        }
 
-body{
-font-family:'Poppins',sans-serif;
-margin:0;
-padding:0;
-background: linear-gradient(135deg,#0f2027,#2c5364,#1a1a2e);
-background-size:600% 600%;
-animation:gradientBG 20s ease infinite;
-color:white;
-text-align:center;
-}
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
 
-@keyframes gradientBG{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
+            50% {
+                background-position: 100% 50%;
+            }
 
-h1{
-margin-top:40px;
-}
+            100% {
+                background-position: 0% 50%;
+            }
+        }
 
-body{
-font-family:Poppins, sans-serif;
-margin:0;
-padding:0;
-background:linear-gradient(135deg,#0f2027,#2c5364,#1a1a2e);
-color:white;
-text-align:center;
-}
+        h1 {
+            margin-top: 40px;
+        }
 
-h1{
-margin-top:40px;
-}
+        body {
+            font-family: Poppins, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f2027, #2c5364, #1a1a2e);
+            color: white;
+            text-align: center;
+        }
 
-.playlist-container{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:25px;
-padding:20px;
-}
+        h1 {
+            margin-top: 40px;
+        }
 
-.music-card{
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(10px);
-padding:20px;
-border-radius:15px;
-width:90%;
-max-width:320px;
-margin:auto;
-box-shadow:0 10px 25px rgba(0,0,0,0.4);
-}
+        .playlist-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            padding: 20px;
+        }
 
-.music-card img{
-width:90px;
-height:90px;
-border-radius:50%;
-object-fit:cover;
-margin-bottom:10px;
-}
+        .music-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 320px;
+            margin: auto;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
 
-.music-card iframe{
-width:100%;
-height:80px;
-border-radius:12px;
-}
+        .music-card img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
 
-/* tombol */
+        .music-card iframe {
+            width: 100%;
+            height: 80px;
+            border-radius: 12px;
+        }
 
-.nav{
-margin-bottom:40px;
-}
+        /* tombol */
 
-button{
-padding:12px 35px;
-margin:10px;
-border:none;
-border-radius:30px;
-background:rgba(255,255,255,0.3);
-color:white;
-cursor:pointer;
-font-size:1rem;
-transition:0.3s;
-}
+        .nav {
+            margin-bottom: 40px;
+        }
 
-button:hover{
-background:rgba(255,255,255,0.6);
-transform:scale(1.05);
-}
+        button {
+            padding: 12px 35px;
+            margin: 10px;
+            border: none;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
 
-a{
-text-decoration:none;
-}
+        button:hover {
+            background: rgba(255, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
 
-@media (max-width:768px){
+        a {
+            text-decoration: none;
+        }
 
-.menu{
-flex-wrap:wrap;
-justify-content:center;
-gap:15px;
-}
+        @media (max-width:768px) {
 
-.navbar{
-flex-direction:column;
-gap:10px;
-}
+            .menu {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
 
-h1{
-font-size:2.2rem;
-}
+            .navbar {
+                flex-direction: column;
+                gap: 10px;
+            }
 
-}
+            h1 {
+                font-size: 2.2rem;
+            }
 
-.fade-in{
-opacity:0;
-transform:translateY(40px);
-animation:fadeUp 1.5s ease forwards;
-}
+        }
 
-@keyframes fadeUp{
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeUp 1.5s ease forwards;
+        }
 
-.playlist-container{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:25px;
-padding:20px;
-}
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-@media (max-width:768px){
+        .playlist-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            padding: 20px;
+        }
 
-h1{
-font-size:1.8rem;
-}
+        @media (max-width:768px) {
 
-.music-card iframe{
-width:100%;
-height:150px;
-border-radius:12px;
-}
+            h1 {
+                font-size: 1.8rem;
+            }
 
-}
+            .music-card {
+                width: 95%;
+            }
 
-</style>
+        }
+    </style>
 
 </head>
 
 <body>
- <nav class="navbar">
+    <nav class="navbar">
 
-<div class="logo">
-TKJ 1
-</div>
+        <div class="logo">
+            TKJ 1
+        </div>
 
-<ul class="menu">
-<li><a href="index.html">Home</a></li>
-<li><a href="profil.html">Profil</a></li>
-<li><a href="struktur.html">Struktur</a></li>
-<li><a href="siswa.html">Member</a></li>
-<li><a href="playlist.html">Playlist</a></li>
-<li><a href="galeri.html">Galeri</a></li>
-<li><a href="kegiatan.html">Kegiatan</a></li>
-<li><a href="penutup.html">Penutup</a></li>
-</ul>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profil.html">Profil</a></li>
+            <li><a href="struktur.html">Struktur</a></li>
+            <li><a href="siswa.html">Member</a></li>
+            <li><a href="playlist.html">Playlist</a></li>
+            <li><a href="galeri.html">Galeri</a></li>
+            <li><a href="kegiatan.html">Kegiatan</a></li>
+            <li><a href="penutup.html">Penutup</a></li>
+        </ul>
 
-</nav>
+    </nav>
 
-<h1>🎧 Soundtrack For Class TKJ 1</h1>
+    <h1>🎧 Soundtrack For Class TKJ 1</h1>
 
-<div class="playlist-container">
+    <div class="playlist-container">
 
-  <div class="music-card">
-    <img src="fotos/musa.jpeg">
-    <h3>Ahmad Musyaffa</h3>
+        <div class="music-card">
 
-    <iframe
-    src="https://open.spotify.com/embed/track/5h5CQwgjgQrBUacsqR2zR7"
-    width="100%" height="152">
-    </iframe>
-  </div>
+            <img src="fotos/musa.jpeg">
+            <h3>Ahmad Musyaffa</h3>
 
-  <div class="music-card">
-    <img src="fotos/musa.jpeg">
-    <h3>Ahmad Musyaffa</h3>
+            <iframe style="border-radius:12px"
+                src="https://open.spotify.com/embed/track/5h5CQwgjgQrBUacsqR2zR7?utm_source=generator" width="300"
+                height="152" frameBorder="0" allowfullscreen
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+            </iframe>
 
-    <iframe
-    src="https://www.youtube.com/embed/aNGwtFaxBok"
-    width="100%" height="152">
-    </iframe>
-  </div>
+        </div>
+    </div>
 
-</div>
 
-<div class="nav">
+    <div class="nav">
 
-<a href="siswa.html">
-<button>⬅ Back</button>
-</a>
+        <a href="siswa.html">
+            <button>⬅ Back</button>
+        </a>
 
-<a href="galeri.html">
-<button>Next ➜</button>
-</a>
+        <a href="galeri.html">
+            <button>Next ➜</button>
+        </a>
 
-</div>
+    </div>
 
 </body>
+
 </html>
