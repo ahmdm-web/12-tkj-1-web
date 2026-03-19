@@ -116,6 +116,11 @@
             border-radius: 12px;
         }
 
+        .music-card audio {
+            width: 100%;
+            margin-top: 10px;
+        }
+
         /* tombol */
 
         .nav {
@@ -175,24 +180,193 @@
             }
         }
 
-        .playlist-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px;
-            padding: 20px;
+        /* SPOTIFY PLAYER FIX - SOLID NEON */
+        .spotify-player {
+            background: linear-gradient(145deg,
+                    rgba(15, 15, 25, 0.95),
+                    rgba(25, 25, 45, 0.95));
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            padding: 2rem;
+            margin: 1rem 0;
+            box-shadow:
+                0 25px 50px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
         }
 
-        @media (max-width:768px) {
+        .spotify-player::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg,
+                    transparent,
+                    #1db954,
+                    #44f557,
+                    #1db954,
+                    transparent);
+            animation: neonPulse 3s ease-in-out infinite;
+        }
 
-            h1 {
-                font-size: 1.8rem;
+        @keyframes neonPulse {
+
+            0%,
+            100% {
+                opacity: 0.5;
             }
 
-            .music-card {
-                width: 95%;
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .player-cover {
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.4),
+                0 0 25px rgba(29, 185, 84, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .player-cover.playing {
+            box-shadow:
+                0 20px 40px rgba(29, 185, 84, 0.4),
+                0 0 40px rgba(29, 185, 84, 0.6);
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 20px 40px rgba(29, 185, 84, 0.4), 0 0 40px rgba(29, 185, 84, 0.6);
             }
 
+            50% {
+                box-shadow: 0 25px 50px rgba(29, 185, 84, 0.6), 0 0 60px rgba(29, 185, 84, 0.8);
+            }
+        }
+
+        .progress-container {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 4px;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #1db954, #44f557, #1ed760);
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.2s ease;
+            box-shadow: 0 0 15px rgba(29, 185, 84, 0.6);
+            position: relative;
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5));
+            animation: progressShine 2s infinite;
+        }
+
+        @keyframes progressShine {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .control-btn {
+            width: 55px;
+            height: 55px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+            color: white;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .control-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .play-btn {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(145deg, rgba(29, 185, 84, 0.8), rgba(29, 185, 84, 0.6));
+            border: 2px solid #1db954;
+            box-shadow:
+                0 10px 25px rgba(29, 185, 84, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .play-btn:hover {
+            background: linear-gradient(145deg, rgba(29, 185, 84, 1), rgba(29, 185, 84, 0.8));
+            box-shadow:
+                0 15px 35px rgba(29, 185, 84, 0.6),
+                0 0 25px rgba(29, 185, 84, 0.8),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        .volume-slider {
+            width: 120px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 3px;
+            outline: none;
+            appearance: none;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(145deg, #1db954, #44f557);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow:
+                0 5px 15px rgba(29, 185, 84, 0.5),
+                0 0 0 4px rgba(255, 255, 255, 0.2);
+        }
+
+        .player-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .player-artist {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1rem;
+            font-weight: 500;
         }
     </style>
 
@@ -221,84 +395,209 @@
     <h1>🎧 Soundtrack For Class TKJ 1</h1>
 
     <div class="playlist-container">
-
         <div class="music-card">
-
-            <img src="fotos/musa.jpeg">
+            <img src="fotos/musa.jpeg" class="cover">
             <h3>Ahmad Musyaffa</h3>
 
-            <iframe style="border-radius:12px"
-                src="https://open.spotify.com/embed/track/5h5CQwgjgQrBUacsqR2zR7?utm_source=generator" 
-                width="300"
-                height="152" frameBorder="0" allowfullscreen
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-            </iframe>
+            <!-- 🎵 SPOTIFY PLAYER 🎵 -->
+            <!-- REPLACE SPOTIFY PLAYER HTML INI -->
+            <div class="spotify-player" id="spotifyPlayer">
+                <div class="player-header">
+                    <img src="fotos/musa.jpeg" alt="Cover" class="player-cover" id="playerCover">
+                    <div class="player-info">
+                        <div class="player-title" id="playerTitle">Judul Lagu</div>
+                        <div class="player-artist" id="playerArtist">Artist Name</div>
+                    </div>
+                </div>
+
+                <div class="progress-section">
+                    <div class="time-display">
+                        <span id="currentTime">0:00</span>
+                        <span id="duration">0:00</span>
+                    </div>
+
+                    <div class="progress-container" id="progressContainer">
+                        <div class="progress-bar" id="progressBar"></div>
+                        <div class="progress-glow"></div>
+                    </div>
+                </div>
+
+                <div class="player-controls">
+                    <button class="control-btn" id="prevBtn" title="Previous">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M15 18l-6-6 6-6" />
+                        </svg>
+                    </button>
+
+                    <button class="control-btn play-btn" id="playBtn" title="Play/Pause">
+                        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                        <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor" style="display:none">
+                            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                        </svg>
+                    </button>
+
+                    <button class="control-btn" id="nextBtn" title="Next">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 18l6-6-6-6" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="volume-section">
+                    <button class="control-btn" id="volumeBtn" title="Volume">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" />
+                        </svg>
+                    </button>
+                    <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="70">
+                </div>
+            </div>
+
+            <div class="nav">
+                <a href="siswa.html"><button>⬅ Back</button></a>
+                <a href="galeri.html"><button>Next ➜</button></a>
+            </div>
+
+            <!-- JAVASCRIPT PLAYER -->
+            <script>
+                class SpotifyPlayer {
+                    constructor() {
+                        this.audio = new Audio();
+                        this.isPlaying = false;
+                        this.currentSong = 0;
+                        this.songs = [
+                            { title: 'A Thousand Years', artist: 'James Arthur', src: 'playlist/a thousand years.mp4', cover: 'cover/james arthur.jpg' },
+                            { title: 'Tak Kan Hilang', artist: 'Budi Doremi', src: 'playlist/takan hilang.mp4', cover: 'cover/budi doremi takan hilang.jpg' },
+                            { title: 'Abadi', artist: 'Budi Doremi', src: 'playlist/abadi.m4a', cover: 'cover/bda.jpg' }
+                        ];
+
+                        this.init();
+                    }
+
+                    init() {
+                        this.loadSong();
+                        this.bindEvents();
+                        this.updateDisplay();
+                    }
+
+                    loadSong() {
+                        const song = this.songs[this.currentSong];
+                        this.audio.src = song.src;
+                        document.getElementById('playerTitle').textContent = song.title;
+                        document.getElementById('playerArtist').textContent = song.artist;
+                        document.getElementById('playerCover').src = song.cover;
+                    }
+
+                    bindEvents() {
+                        document.getElementById('playBtn').addEventListener('click', () => {
+                            this.togglePlay();
+                            // Toggle play/pause icon
+                            const playIcon = document.querySelector('.play-icon');
+                            const pauseIcon = document.querySelector('.pause-icon');
+                            if (this.isPlaying) {
+                                playIcon.style.display = 'none';
+                                pauseIcon.style.display = 'block';
+                            } else {
+                                playIcon.style.display = 'block';
+                                pauseIcon.style.display = 'none';
+                            }
+                        });
+                        // Next/Prev
+                        document.getElementById('nextBtn').addEventListener('click', () => this.nextSong());
+                        document.getElementById('prevBtn').addEventListener('click', () => this.prevSong());
+
+                        // Progress
+                        document.getElementById('progressContainer').addEventListener('click', (e) => this.setProgress(e));
+
+                        // Volume
+                        document.getElementById('volumeSlider').addEventListener('input', (e) => {
+                            this.audio.volume = e.target.value / 100;
+                        });
+
+                        // Audio events
+                        this.audio.addEventListener('timeupdate', () => this.updateProgress());
+                        this.audio.addEventListener('loadedmetadata', () => this.updateDuration());
+                        this.audio.addEventListener('ended', () => this.nextSong());
+                        this.audio.addEventListener('play', () => this.onPlay());
+                        this.audio.addEventListener('pause', () => this.onPause());
+                    }
+
+                    togglePlay() {
+                        if (this.isPlaying) {
+                            this.audio.pause();
+                        } else {
+                            this.audio.play();
+                        }
+                    }
+
+                    nextSong() {
+                        this.currentSong = (this.currentSong + 1) % this.songs.length;
+                        this.loadSong();
+                        if (this.isPlaying) this.audio.play();
+                    }
+
+                    prevSong() {
+                        this.currentSong = (this.currentSong - 1 + this.songs.length) % this.songs.length;
+                        this.loadSong();
+                        if (this.isPlaying) this.audio.play();
+                    }
+
+                    updateProgress() {
+                        const progress = (this.audio.currentTime / this.audio.duration) * 100;
+                        document.getElementById('progressBar').style.width = progress + '%';
+                        document.getElementById('currentTime').textContent = this.formatTime(this.audio.currentTime);
+                    }
+
+                    updateDuration() {
+                        document.getElementById('duration').textContent = this.formatTime(this.audio.duration);
+                    }
+
+                    setProgress(e) {
+                        const progress = document.getElementById('progressContainer');
+                        const clickX = e.offsetX;
+                        const duration = this.audio.duration;
+                        this.audio.currentTime = (clickX / progress.offsetWidth) * duration;
+                    }
+
+                    formatTime(seconds) {
+                        const mins = Math.floor(seconds / 60);
+                        const secs = Math.floor(seconds % 60);
+                        return `${mins}:${secs.toString().padStart(2, '0')}`;
+                    }
+
+                    onPlay() {
+                        this.isPlaying = true;
+                        document.querySelector('.play-icon').style.display = 'none';
+                        document.querySelector('.pause-icon').style.display = 'block';
+                        document.getElementById('playerCover').classList.add('playing');
+                    }
+
+                    onPause() {
+                        this.isPlaying = false;
+                        document.querySelector('.play-icon').style.display = 'block';
+                        document.querySelector('.pause-icon').style.display = 'none';
+                        document.getElementById('playerCover').classList.remove('playing');
+                    }
+                    updateDisplay() {
+                        // Auto update every second
+                        setInterval(() => {
+                            if (!this.isPlaying) return;
+                            this.updateProgress();
+                        }, 1000);
+                    }
+                }
+
+                // INIT PLAYER
+                const player = new SpotifyPlayer();
+            </script>
 
         </div>
+
     </div>
-
-    <div class="playlist-container">
-
-        <div class="music-card">
-
-            <img src="fotos/musa.jpeg">
-            <h3>Ahmad Musyaffa</h3>
-
-            <iframe style="border-radius:12px"
-                src ="https://open.spotify.com/embed/track/1USA6DXJ1qsucoKnDu4vnu?utm_source=generator"
-                width="300"
-                height="152" frameBorder="0" allowfullscreen
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-            </iframe>
-
-        </div>
-    </div>
-
-     <div class="playlist-container">
-
-        <div class="music-card">
-
-            <img src="fotos/musa.jpeg">
-            <h3>Ahmad Musyaffa</h3>
-
-            <iframe style="border-radius:12px"
-                src ="https://open.spotify.com/embed/track/3FwQ3RYYEekzjEeL3jdpUZ?utm_source=generator" 
-                width="300"
-                height="152" frameBorder="0" allowfullscreen
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-            </iframe>
-
-        </div>
-    </div>
-
- <div class="playlist-container">
-
-        <div class="music-card">
-
-            <img src="fotos/musa.jpeg">
-            <h3>Ahmad Musyaffa</h3>
-
-            <iframe style="border-radius:12px"
-                src ="https://open.spotify.com/embed/track/3BErcieh7kIQIMq64vEbCY?utm_source=generator" 
-                width="300"
-                height="152" frameBorder="0" allowfullscreen
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-            </iframe>
-
-        </div>
-    </div>
-
-
-
     <div class="nav">
-
-        <a href="siswa.html">
-            <button>⬅ Back</button>
-        </a>
-
-        <a href="galeri.html">
-            <button>Next ➜</button>
-        </a>
 
     </div>
 
